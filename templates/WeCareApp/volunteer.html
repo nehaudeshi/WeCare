@@ -1,0 +1,38 @@
+{% extends 'WeCareApp/base.html' %}
+{% load static %}
+{% block content %}
+
+<script type="text/javascript">
+  document.body.classList.add('portfolio');
+  document.body.classList.add('single-page');
+</script>
+
+
+    <div class="page-header"  style="  background: url('{% static "images/portfolio-bg.jpg"  %}') no-repeat center; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Volunteer</h1>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .page-header -->
+
+    <div class="portfolio-wrap">
+        <div class="container">
+            <h2>Thank you for your interest in volunteering with Families for Depression Awareness!</h2>
+            <br>
+            <br>
+            <h4>Volunteers are integral to the success of our organization. <br>You can help us by</h4>
+            <ul type="circle">
+                <li>Filling out a volunteer form indicating how you want to be involved</li>
+                <li>Commenting on and sharing Care for Your Mind posts</li>
+                <li>Participating in specific events or projects when available</li>
+                <li>Becoming a “Teen Speaker” in our Teen Depression program (ages 15-25)</li>
+                <li>Making a financial contribution</li>
+        </div>
+    </div>
+
+
+
+{% endblock %}

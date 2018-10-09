@@ -1,0 +1,211 @@
+ {% extends 'WeCareApp/base.html' %}
+ {% load static %}
+ {% block content %}
+ <script type="text/javascript">
+   document.getElementById('home_tag').classList.add('current-selected-item')
+ </script>
+
+     <div class="swiper-container hero-slider">
+         <div class="swiper-wrapper">
+             <div class="swiper-slide hero-content-wrap">
+                 <img src="https://images.unsplash.com/photo-1526749837599-b4eba9fd855e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=36f243a4902af3e45f4f2f3c031f04f6&auto=format&fit=crop&w=1050&q=80" alt="">
+
+                 <div class="hero-content-overlay position-absolute w-100 h-100">
+                     <div class="container h-100">
+                         <div class="row h-100">
+                             <div class="col-12 col-lg-10 d-flex flex-column justify-content-center align-items-start" style="padding-left: 200px">
+                                 <header class="entry-header">
+                                     <h1>Live</h1>
+                                     <h4>“It does not matter how slowly you go as long as you do not stop.”</h4>
+                                 </header><!-- .entry-header -->
+
+                             </div><!-- .col -->
+                         </div><!-- .row -->
+                     </div><!-- .container -->
+                 </div><!-- .hero-content-overlay -->
+             </div><!-- .hero-content-wrap -->
+
+             <div class="swiper-slide hero-content-wrap">
+                 <img src="https://images.unsplash.com/photo-1516441983740-65fe2f63f809?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07e5d11a935183ebfd46475abf78e5c3&auto=format&fit=crop&w=967&q=80" alt="">
+
+                 <div class="hero-content-overlay position-absolute w-100 h-100">
+                     <div class="container h-100">
+                         <div class="row h-100">
+                             <div class="col-12 col-lg-10 d-flex flex-column justify-content-center align-items-start" style="padding-left: 200px">
+                                 <header class="entry-header">
+                                     <h1>Be Strong</h1>
+                                     <h4>“If you were born with the weakness to fall, you were born with the strength to rise.”</h4>
+                                 </header><!-- .entry-header -->
+                             </div><!-- .col -->
+                         </div><!-- .row -->
+                     </div><!-- .container -->
+                 </div><!-- .hero-content-overlay -->
+             </div><!-- .hero-content-wrap -->
+
+             <div class="swiper-slide hero-content-wrap">
+                 <img src="https://images.unsplash.com/photo-1447756433849-b06978ea3d5c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6fd890e214fc6dee358f7d509011ff0b&auto=format&fit=crop&w=1350&q=80" alt="">
+
+                 <div class="hero-content-overlay position-absolute w-100 h-100">
+                     <div class="container h-100">
+                         <div class="row h-100">
+                             <div class="col-12 col-lg-10 d-flex flex-column justify-content-center align-items-start" style="padding-left: 200px">
+                                 <header class="entry-header">
+                                     <h1>Be Happy</h1>
+                                     <h4>“At the end of the day, the fact that we have the courage to still be standing is reason enough to celebrate.”</h4>
+                                 </header><!-- .entry-header -->
+
+
+                             </div><!-- .col -->
+                         </div><!-- .row -->
+                     </div><!-- .container -->
+                 </div><!-- .hero-content-overlay -->
+             </div><!-- .hero-content-wrap -->
+         </div><!-- .swiper-wrapper -->
+
+         <div class="pagination-wrap position-absolute w-100">
+             <div class="container">
+                 <div class="swiper-pagination"></div>
+             </div><!-- .container -->
+         </div><!-- .pagination-wrap -->
+
+         <!-- Add Arrows -->
+         <div class="swiper-button-next flex justify-content-center align-items-center">
+             <span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg></span>
+         </div>
+
+         <div class="swiper-button-prev flex justify-content-center align-items-center">
+             <span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg></span>
+         </div>
+     </div><!-- .hero-slider -->
+
+     <div class="home-page-icon-boxes">
+         <div class="container">
+             <div class="row">
+                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                     <div class="icon-box">
+                         <figure class="d-flex justify-content-center">
+                             <img src="{% static "images/hands-gray.png"  %}" alt="">
+                             <img src="{% static "images/hands-white.png" %}"  alt="">
+                         </figure>
+
+                         <header class="entry-header">
+                             <h3 class="entry-title">Become a Volunteer</h3>
+                         </header>
+
+                         <div class="entry-content">
+                             <p>Local crisis centers can support the fight against suicide by joining the Lifeline's national network.</p>
+                             <br>
+                             <a style="color: #ecf2f5" href="/volunteer">Volunteer</a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                     <div class="icon-box">
+                         <figure class="d-flex justify-content-center">
+                            <img src="{% static "images/donation-gray.png"  %}" alt="">
+                              <img src="{% static "images/donation-white.png"  %}" alt="">
+                         </figure>
+
+                         <header class="entry-header">
+                             <h3 class="entry-title">Get Help</h3>
+                         </header>
+
+                         <div class="entry-content">
+                             <p>Get resources for yourself or be the difference for a loved one by offering support and understanding.</p>
+                             <br>
+                             <a style="color: #ecf2f5" href="/gethelp">Get Help</a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                     <div class="icon-box">
+                         <figure class="d-flex justify-content-center">
+                           <img src="{% static "images/charity-gray.png"  %}" alt="">
+                           <img src="{% static "images/charity-white.png"  %}" alt="">
+                         </figure>
+
+                         <header class="entry-header">
+                             <h3 class="entry-title">Donate</h3>
+                         </header>
+
+                         <div class="entry-content">
+                             <p>With your help, we can spread awareness about suicide prevention and mental health, and save lives.</p>
+                             <br>
+                             <a style="color: #ecf2f5" href="/contact">Donate</a>
+                         </div>
+                     </div>
+                 </div>
+             </div><!-- .row -->
+         </div><!-- .container -->
+     </div><!-- .home-page-icon-boxes -->
+
+     <div class="home-page-welcome">
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-12 col-lg-4 order-2 order-lg-1">
+                     <iframe  src="https://www.youtube.com/embed/GnKneUTFnN8"></iframe>
+                 </div>
+                 <div class="col-sm-12 col-lg-4 order-2 order-lg-1">
+                 <iframe  src="https://www.youtube.com/embed/fvGw8tnDQkw"></iframe>
+             </div>
+             <div class="col-sm-12 col-lg-4 order-2 order-lg-1">
+                 <iframe  src="https://www.youtube.com/embed/7CIq4mtiamY"></iframe>
+             </div>
+                 </div><!-- .col -->
+             </div><!-- .row -->
+         </div><!-- .container -->
+     </div><!-- .home-page-icon-boxes -->
+
+
+
+     <div class="home-page-limestone">
+         <div class="container">
+             <div class="row align-items-end">
+                 <div class="coL-12 col-lg-6">
+                     <div class="section-heading">
+                         <h2 class="entry-title">Life is a war. Doctors fight disease. Lawyers fight injustice. Teachers fight ignorance.
+ WeCare fights to prevent suicide.</h2>
+
+                     </div><!-- .section-heading -->
+                 </div><!-- .col -->
+
+                 <div class="col-12 col-lg-6">
+                     <div class="milestones d-flex flex-wrap justify-content-between">
+                         <div class="col-12 col-sm-6 mt-5 mt-lg-0">
+                             <div class="counter-box">
+                                 <div class="d-flex justify-content-center align-items-center">
+                                     <img src="{% static "images/teamwork.png" %}">
+                                 </div>
+
+                                 <div class="d-flex justify-content-center align-items-baseline">
+                                     <div class="start-counter" data-to="120" data-speed="2000"></div>
+                                     <div class="counter-k">K</div>
+                                 </div>
+
+                                 <h3 class="entry-title">People helped</h3><!-- entry-title -->
+                             </div><!-- counter-box -->
+                         </div><!-- .col -->
+
+                         <div class="col-12 col-sm-6 mt-5 mt-lg-0">
+                             <div class="counter-box">
+                                 <div class="d-flex justify-content-center align-items-center">
+                                     <img src="{% static "images/dove.png" %}">
+                                 </div>
+
+                                 <div class="d-flex justify-content-center align-items-baseline">
+                                     <div class="start-counter" data-to="253" data-speed="2000"></div>
+                                 </div>
+
+                                 <h3 class="entry-title">Volunteeres</h3><!-- entry-title -->
+                             </div><!-- counter-box -->
+                         </div><!-- .col -->
+                     </div><!-- .milestones -->
+                 </div><!-- .col -->
+             </div><!-- .row -->
+         </div><!-- .container -->
+     </div><!-- .our-causes -->
+
+
+     {% endblock %}

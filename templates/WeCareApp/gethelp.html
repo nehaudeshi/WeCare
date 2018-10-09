@@ -1,0 +1,86 @@
+{% extends 'WeCareApp/base.html' %}
+{% load static %}
+{% block content %}
+
+<script type="text/javascript">
+  document.body.classList.add('causes-page');
+  document.body.classList.add('single-page');
+</script>
+
+
+
+<div class="page-header" style="  background: url('{% static "images/causes-bg.jpg"  %}') no-repeat center; ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Get Help</h1>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- .page-header -->
+
+<div class="featured-cause">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h2 class="entry-title">Our Helplines</h2>
+                </div><!-- .section-heading -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-6 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <figure class="d-flex justify-content-center">
+                        <img src="{% static "images/call.png"  %}" style="width: 49px; height: 61px;" alt="">
+                        <img src="{% static "images/call.png"  %}" style="width: 49px; height: 61px;" alt="">
+                    </figure>
+
+                    <header class="entry-header">
+                        <h3 class="entry-title">Call Us At</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <h4>+243772120091</h4>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <figure class="d-flex justify-content-center">
+                        <img src="{% static "images/call.png"  %}" style="width: 49px; height: 61px;" alt="">
+                        <img src="{% static "images/call.png"  %}" style="width: 49px; height: 61px;" alt="">
+                    </figure>
+
+                    <header class="entry-header">
+                        <h3 class="entry-title">Call Us At</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <h4>+564524567</h4>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- .featured-cause -->
+<div class="container">
+<div class="col-12" style="margin-bottom: 20px;">
+        <div class="section-heading">
+            <h2 class="entry-title">Psychological Centres Near You</h2>
+    </div><!-- .section-heading -->
+</div><!-- .col -->
+
+
+<div style="height: 500px; margin-bottom: 100px" id="map-canvas"></div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2MndnCGBXqDolsrQYhNdVyXqsk0NRm8Q&libraries=places"></script>
+
+<script type='text/javascript' src='{% static "WeCareApp/custom.js" %}'></script>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'WeCareApp/base.html' %}
+{% load static %}
+{% block content %}
+<script type="text/javascript">
+  document.body.classList.add('about-page')
+  document.body.classList.add('single-page')
+</script>
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>About Us</h1>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .page-header -->
+
+    <div class="welcome-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <div class="welcome-content">
+                        <header class="entry-header">
+                            <h2 class="entry-title">Welcome to WeCare</h2>
+                        </header><!-- .entry-header -->
+
+                        <div class="entry-content mt-5">
+                            <p>WeCare provides free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours a day, 7 days a week, across India. The Lifeline is comprised of a national network of over 150 local crisis centers, combining custom local care and resources with national standards and best practices.</p>
+
+                        </div><!-- .entry-content -->
+
+
+                    </div><!-- .welcome-content -->
+                </div><!-- .col -->
+
+                <div class="col-12 col-lg-6 order-1 order-lg-2">
+                     <img src="{% static "images/welcome.jpg"  %}" alt="welcome">
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .home-page-icon-boxes -->
+
+    <div class="about-stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="circular-progress-bar">
+                        <div class="circle" id="loader_1">
+                            <strong class="d-flex justify-content-center"></strong>
+                        </div>
+
+                        <h3 class="entry-title">Hard Work</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="circular-progress-bar">
+                        <div class="circle" id="loader_2">
+                            <strong class="d-flex justify-content-center"></strong>
+                        </div>
+
+                        <h3 class="entry-title">Pure Love</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="circular-progress-bar">
+                        <div class="circle" id="loader_3">
+                            <strong class="d-flex justify-content-center"></strong>
+                        </div>
+
+                        <h3 class="entry-title">Smart Ideas</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="circular-progress-bar">
+                        <div class="circle" id="loader_4">
+                            <strong class="d-flex justify-content-center"></strong>
+                        </div>
+
+                        <h3 class="entry-title">Good Decisions</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="testimonial-cont">
+                        <div class="entry-content">
+                            <p>We love to help all the people that have mental or emotional problems in the world. After 15 years we have many goals achieved.</p>
+                        </div>
+
+                        <div class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                            <img src="{% static "images/testimonial-1.jpg"  %}" alt="">
+                            <h4>Maria Williams, <span>Volunteer</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 offset-lg-2 col-lg-5">
+                    <div class="testimonial-cont">
+                        <div class="entry-content">
+                            <p>I had myself been in depression for a couple of months and if they had such work back then, lot of my problems would have been avoided.</p>
+                        </div>
+
+                        <div class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                            <img src="{% static "images/testimonial-2.jpg"  %}" alt="">
+                            <h4>Cristian James, <span>Volunteer</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="help-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                    <h2>Help us so we can help others</h2>
+
+                    <a class="btn orange-border" href="/contact">Donate now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

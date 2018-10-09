@@ -1,0 +1,225 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>WeCare</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static "bootstrap/bootstrap.min.css" %}">
+
+    <!-- FontAwesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="{% static "bootstrap/elegant-fonts.css" %}">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="{% static "bootstrap/themify-icons.css" %}">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static "bootstrap/swiper.min.css" %}">
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    <script type='text/javascript' src='{% static "bootstrap/jquery.js" %}'></script>
+    <script type='text/javascript' src='{% static "bootstrap/jquery.collapsible.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "bootstrap/swiper.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "bootstrap/jquery.countdown.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "bootstrap/circle-progress.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "bootstrap/jquery.countTo.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "bootstrap/jquery.barfiller.js" %}'></script>
+    <script type='text/javascript' src='{% static "WeCareApp/custom.js" %}'></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static "WeCareApp/style.css" %}">
+</head>
+<body>
+    <div id="id01" class="modal">
+<form class="modal-content animate" method="post" action="/customlogin">
+              {% csrf_token %}
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                </div>
+                <div class="container">
+                  {% if error_message_login %}
+                  <label><b>error_message_login</b></label>
+                  {% endif %}
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Enter ID" name="login_email" required>
+                    <br>
+                    <br>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="login_password" required>
+                    <br>
+                    <br>
+                    <button type="submit" id="login_button">Login</button>
+                      <button type="button" class="loginBtn loginBtn--google" style="float:right;" onclick='window.location.href="{% url 'social:begin' 'google-oauth2' %}" '>Login with Google</button>
+                </div>
+                <div style="background-color:#f1f1f1; padding: 10px">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+
+        </div>
+     <div id="id02" class="modal">
+            <form class="modal-content animate" method="post" action="/customSignUp">
+                {% csrf_token %}
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                </div>
+                <div class="container">
+                    <label for="email"><b>Name</b></label>
+                    <input type="text" placeholder="Enter Name" name="name" required>
+                    <br><br>
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required><br><br>
+                    <label for="dob"><b>Date of Birth</b></label><br>
+                    <input type="date" name="dob" style="width:250px;" required><br><br>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required><br><br>
+                    <button type="button" class="loginBtn loginBtn--google" style="float:right;" onclick='window.location.href="{% url 'social:begin' 'google-oauth2' %}" '>Login with Google</button>
+                    <button type="submit" id="login_button">Register</button>
+                    <label style="color:black;">
+                    </label>
+                    </div>
+                <div style="background-color:#f1f1f1; padding: 10px">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+    <header class="site-header">
+        <div class="top-header-bar">
+            <div class="container">
+                <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-lg-center">
+                    <div class="col-12 col-lg-6 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                        <div class="header-bar-email">
+                            MAIL: <span style="text-transform: lowercase;">contact@wecare.com</span>
+                        </div><!-- .header-bar-email -->
+
+                        <div class="header-bar-text">
+                            <p>PHONE: <span>+24 3772 120 091 / +56452 4567</span></p>
+                        </div><!-- .header-bar-text -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-lg-6 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                        <div class="donate-btn">
+                            <a href="#">Donate Now</a>
+                        </div><!-- .donate-btn -->
+
+                        {% if user.is_authenticated %}
+                        <div class="donate-btn">
+                            <a href="/profile">Profile</a>
+                        </div><!-- .donate-btn -->
+                        <div class="donate-btn">
+                            <a href="/signout">Logout</a>
+                        </div><!-- .donate-btn -->
+                        {% else %}
+                        <div class="donate-btn">
+                            <a href="#" onclick="document.getElementById('id01').style.display='block'">Login</a>
+                        </div><!-- .login-btn -->
+                        <div class="donate-btn">
+                            <a href="#" onclick="document.getElementById('id02').style.display='block'">Signup</a>
+                        </div><!-- .donate-btn -->
+                        {% endif %}
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .top-header-bar -->
+
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="site-branding d-flex align-items-center">
+                           <a class="d-block" href="index.html" rel="home"><img class="d-block" src="https://www.freelogoservices.com/api/main/images/1j+ojlxEOMkX9Wyqfhe43D6kiv+GqhZGnx...NwWJqZ1cchl4uxTZxhP8CoL4gbUgbtQ4egRUZN5hkyWEuXIEQjxJt9zeOPo8=" alt="logo"></a>
+                        </div><!-- .site-branding -->
+
+                        <nav class="site-navigation d-flex justify-content-end align-items-center">
+                            <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                <li><a href="/" id="home_tag">Home</a></li>
+                                <li><a href="/about" id="about_tag">About us</a></li>
+                                <li><a href="/gethelp" id="gethelp_tag">Get Help</a></li>
+                                <li><a href="/volunteer" id="volunteer_tag">Volunteer</a></li>
+                                <li><a href="/blogs" id="blogs_tag">Blogs</a></li>
+                                <li><a href="/contact" id="contact_tag">Contact</a></li>
+                            </ul>
+                        </nav><!-- .site-navigation -->
+
+                        <div class="hamburger-menu d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- .hamburger-menu -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .nav-bar -->
+    </header><!-- .site-header -->
+
+
+{% block content %}
+{% endblock %}
+
+   <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="foot-about">
+                            <a class="foot-logo" href="#"><img src="https://www.freelogoservices.com/api/main/images/1j+ojlxEOMkX9Wyqfhe43D6kiv+GqhZGnx...NwWJqZ1cchl4uxTZxhP8CoL4gbUgbtQ4egRUZN5hkyWEuXIEQjxJt9zeOPo8=" alt=""></a>
+
+                            <p>WeCare is a national network of local crisis centers that provides free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours a day, 7 days a week.</p>
+                        </div><!-- .foot-about -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-12 col-lg-3 mt-5 mt-md-0">
+                        <h2>Useful Links</h2>
+
+                        <ul>
+                            <li><a href="#">Become  a Volunteer</a></li>
+                            <li><a href="#">Donate</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Get Help</a></li>
+                        </ul>
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-12 col-lg-3 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <h2>Contact</h2>
+
+                            <ul>
+                                <li><i class="fa fa-phone"></i><span> +24 3772 120 091 / +56452 4567</span></li>
+                                <li><i class="fa fa-envelope"></i><span>contact@wecare.com</span></li>
+                                <li><i class="fa fa-map-marker"></i><span>No 303-305, 3rd Floor, M L Space, D J Road,<br>Station Road, Vile Parle West, Mumbai – 400056.</span></li>
+                            </ul>
+                        </div><!-- .foot-contact -->
+
+
+                        </div><!-- .search-widget -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+        <div class="footer-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div><!-- .col-12 -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-bar -->
+    </footer><!-- .site-footer -->
+
+{% if error_message_login %}
+<style media="screen">
+  $('login_button'). click();
+</style>
+{% endif %}
+<script type='text/javascript' src='{% static "WeCareApp/custom.js" %}'></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends 'WeCareApp/base.html' %}
+{% load static %}
+{% block content %}
+
+<script type="text/javascript">
+  document.body.classList.add('causes-page');
+  document.body.classList.add('single-page');
+</script>
+
+
+
+    <div class="page-header" style="background: url('https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b4e2097bf432491a94b63e3486abe453&auto=format&fit=crop&w=1267&q=80') no-repeat center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Blogs</h1>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .page-header -->
+
+    {% for heading,text in blogs %}
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="container">
+                <div class="col-12 col-md-12 mt-4 mt-lg-0">
+                    <div class="icon-box">
+
+                        <header class="entry-header">
+                            <h3 class="entry-title">{{ heading }}</h3>
+                        </header>
+                        <div class="entry-content">
+                            <p>{{text}}</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+
+{% endblock %}

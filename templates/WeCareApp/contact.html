@@ -1,0 +1,76 @@
+{% extends 'WeCareApp/base.html' %}
+{% load static %}
+{% block content %}
+<script type="text/javascript">
+  document.body.classList.add('contact-page')
+  document.body.classList.add('single-page')
+</script>
+
+
+<div class="page-header" style="  background: url('{% static "images/contact-bg.jpg"  %}') no-repeat center; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Contact</h1>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .page-header -->
+
+    <div class="contact-page-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                    <div class="entry-content">
+                        <h2>Get In touch with us</h2>
+
+
+                        <ul class="contact-info p-0">
+                            <li><i class="fa fa-phone"></i><span>+24 3772 120 091 / +56452 4567</span></li>
+                            <li><i class="fa fa-envelope"></i><span>contact@wecare.com</span></li>
+                            <li><i class="fa fa-map-marker"></i><span><span>No 303-305, 3rd Floor, M L Space,
+                        D J Road,<br>Station Road,
+                        Vile Parle West, Mumbai – 400056.</span></span></li>
+                        </ul>
+                    </div>
+                </div><!-- .col -->
+
+                <div class="col-12 col-lg-7" style="margin-top:100px">
+                    <h2>Donate Now!</h2>
+                    <form class="contact-form" onsubmit="alert('Thank You! We will get back to you as soon as possible'); return true;" action="/">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea rows="15" cols="6" placeholder="Messages" required></textarea>
+
+                        <span>
+                            <input class="btn gradient-bg" type="submit" value="Contact us">
+                        </span>
+                    </form><!-- .contact-form -->
+
+                </div><!-- .col -->
+
+
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div>
+    <center><div id="map"></div></center>
+
+    <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdx_5p5Y17Xo1rfovONEvvOC6LtpQzNOM&#038  &callback=initMap">
+
+        </script>
+        <script type="text/javascript">
+            function initMap() {
+              // The location of Uluru
+              var uluru = {lat:19.1033389 , lng: 72.8366099};
+              // The map, centered at Uluru
+              var map = new google.maps.Map(
+                  document.getElementById('map'), {zoom: 17, center: uluru});
+              // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: uluru, map: map});
+            }
+        </script>
+
+
+
+{% endblock %}
